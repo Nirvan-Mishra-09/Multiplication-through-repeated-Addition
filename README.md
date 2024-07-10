@@ -34,15 +34,12 @@ The `MTRA_datapath` module connects these components as follows:
 
 ### Other Modules
 
-- **reg1.v**: Defines the `reg1` module which is a simple loadable register.
-- **reg2.v**: Defines the `reg2` module which is a register with clear functionality.
-- **counter.v**: Defines the `counter` module which is a loadable and decrementable counter.
+- **reg1.v**: Defines the `reg1` module which is a simple loadable register (A from the data path shown in the diagram)..
+- **reg2.v**: Defines the `reg2` module which is a register with clear functionality (P from the data path shown in the diagram).
+- **counter.v**: Defines the `counter` module which is a loadable and decrementable counter (B from the data path shown in the diagram).
 - **add.v**: Defines the `add` module which is a simple 16-bit adder.
-- **eqz.v**: Defines the `eqz` module which checks if a 16-bit input is zero.
+- **eqz.v**: Defines the `eqz` module which checks if a 16-bit input (B) is zero.
 
-## Usage
-
-Include these Verilog files in your project to use the MTRA datapath. Instantiate the `MTRA_datapath` module and connect it to your system as needed.
 
 
 ### MTRA Datapath
