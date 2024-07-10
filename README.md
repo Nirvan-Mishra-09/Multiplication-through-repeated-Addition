@@ -11,6 +11,8 @@ This repository contains Verilog modules for an MTRA datapath.
 - `counter.v`: Counter module
 - `add.v`: Adder module
 - `eqz.v`: Comparator module
+- `controller.v`: Controller module
+- `mtra_tb.v` : testbench
 
 ## Description
 
