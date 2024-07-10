@@ -44,3 +44,27 @@ The `MTRA_datapath` module connects these components as follows:
 
 ### MTRA Datapath
 ![image](https://github.com/Nirvan-Mishra-09/Multiplication-through-repeated-Addition/assets/127642231/49463a28-a23d-4ff0-b897-dd6929a53dad)
+
+### controller.v
+
+The `controller` module implements a finite state machine (FSM) to control the operation of the MTRA datapath. The FSM consists of five states:
+
+- **S0**: Idle state. Waits for the `start` signal to transition to `S1`.
+- **S1**: Loads data into register `A` (sets `ldA` high).
+- **S2**: Loads data into register `B` (sets `ldB` high) and clears register `P` (sets `clrP` high).
+- **S3**: Starts the main operation, loading data into register `P` (sets `ldP` high) and decrementing the counter (sets `decB` high). If the counter is zero (`eqz` is high), transitions to `S4`.
+- **S4**: Done state. Sets the `done` signal high and stops all operations.
+
+#### State Transitions
+- **S0**: Transitions to `S1` when `start` is high.
+- **S1**: Automatically transitions to `S2`.
+- **S2**: Automatically transitions to `S3`.
+- **S3**: Transitions to `S4` if `eqz` is high.
+- **S4**: Remains in `S4`.
+
+#### Control Signals
+- **S0**: Resets all control signals (`ldA`, `ldB`, `ldP`, `clrP`, `decB`, `done`).
+- **S1**: Sets `ldA` high to load data into register `A`.
+- **S2**: Sets `ldB` high to load data into register `B` and `clrP` high to clear register `P`.
+- **S3**: Sets `ldP` high to load data into register `P` and `decB` high to decrement the counter.
+- **S4**: Sets `done` high to indicate completion and resets other control signals.
