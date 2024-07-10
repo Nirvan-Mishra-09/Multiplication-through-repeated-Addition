@@ -72,7 +72,44 @@ The `controller` module implements a finite state machine (FSM) to control the o
 #### Schematic Diagram from synthesis Tool
 ![image](https://github.com/Nirvan-Mishra-09/Multiplication-through-repeated-Addition/assets/127642231/cab4e32c-80c7-4073-a628-e68c9e2d8275)
 
-#### Output
+
+### Example Usage
+
+This example demonstrates the operation of the MTRA datapath and controller modules with inputs A = 20 and B = 5.
+
+#### Inputs
+- `data_in = 16'd20` (A)
+- `data_in = 16'd5` (B)
+- `start = 1`
+- `clk = 1` (clock signal)
+
+#### Operation
+
+1. **Initial State (S0)**:
+   - Waits for `start` signal to transition to `S1`.
+
+2. **State S1**:
+   - Loads `data_in` (20) into register `A` (X).
+   - Transitions to `S2`.
+
+3. **State S2**:
+   - Loads `data_in` (5) into register `B` (bout).
+   - Clears register `P` (Y).
+   - Transitions to `S3`.
+
+4. **State S3**:
+   - Loads the sum of `X` and `Y` into `P` (Z = X + Y = 20).
+   - Decrements `B` (bout = 4).
+   - Checks if `bout` is zero; if not, remains in `S3`.
+
+   - Repeats until `bout` decrements to 0:
+     - Cycle 2: Z = 20 + 20 = 40, bout = 3
+     - Cycle 3: Z = 20 + 40 = 60, bout = 2
+     - Cycle 4: Z = 20 + 60 = 80, bout = 1
+     - Cycle 5: Z = 20 + 80 = 100, bout = 0
+
+5. **State S4**:
+   - Sets `done` signal high, indicating the operation is complete.
+   - Remains in `S4`.
+     
 ![image](https://github.com/Nirvan-Mishra-09/Multiplication-through-repeated-Addition/assets/127642231/3534e07f-faea-4e79-98e4-dc11932d7baf)
-
-
