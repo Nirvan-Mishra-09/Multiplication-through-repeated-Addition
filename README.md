@@ -72,3 +72,7 @@ The `controller` module implements a finite state machine (FSM) to control the o
 #### Schematic Diagram from synthesis Tool
 ![image](https://github.com/Nirvan-Mishra-09/Multiplication-through-repeated-Addition/assets/127642231/cab4e32c-80c7-4073-a628-e68c9e2d8275)
 
+#### Output
+![image](https://github.com/Nirvan-Mishra-09/Multiplication-through-repeated-Addition/assets/127642231/3534e07f-faea-4e79-98e4-dc11932d7baf)
+
+
