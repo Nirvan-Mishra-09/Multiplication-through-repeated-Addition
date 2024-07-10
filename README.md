@@ -68,3 +68,7 @@ The `controller` module implements a finite state machine (FSM) to control the o
 - **S2**: Sets `ldB` high to load data into register `B` and `clrP` high to clear register `P`.
 - **S3**: Sets `ldP` high to load data into register `P` and `decB` high to decrement the counter.
 - **S4**: Sets `done` high to indicate completion and resets other control signals.
+
+#### Schematic Diagram from synthesis Tool
+![image](https://github.com/Nirvan-Mishra-09/Multiplication-through-repeated-Addition/assets/127642231/cab4e32c-80c7-4073-a628-e68c9e2d8275)
+
